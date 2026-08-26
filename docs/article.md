@@ -19,8 +19,8 @@ Desde esta perspectiva, el consumo constituye el punto de partida para orientar 
 El problema no consiste solamente en determinar cuánto alimento puede producirse con el agua disponible, sino en establecer si esa producción responde a las necesidades de consumo del territorio. Esto requiere integrar dos rutas complementarias:
 
 
-\text{Consumo observado}\rightarrow\text{demanda estimada}\rightarrow
-\text{producción requerida}\rightarrow\text{agua requerida}
+$\text{Consumo observado}\rightarrow\text{demanda estimada}\rightarrow
+\text{producción requerida}\rightarrow\text{agua requerida}$
 
 
 \[

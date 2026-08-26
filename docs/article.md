@@ -19,15 +19,17 @@ Desde esta perspectiva, el consumo constituye el punto de partida para orientar 
 El problema no consiste solamente en determinar cuánto alimento puede producirse con el agua disponible, sino en establecer si esa producción responde a las necesidades de consumo del territorio. Esto requiere integrar dos rutas complementarias:
 
 
-$\text{Consumo observado}\rightarrow\text{demanda estimada}\rightarrow
-\text{producción requerida}\rightarrow\text{agua requerida}$
+$$
+\text{Consumo observado}\rightarrow\text{demanda estimada}\rightarrow
+\text{producción requerida}\rightarrow\text{agua requerida}
+$$
 
 
-\[
+$$
 \text{Clima}\rightarrow\text{disponibilidad hídrica}\rightarrow
 \text{producción real}\rightarrow\text{oferta}\rightarrow
 \text{consumo atendido}
-\]
+$$
 
 La comparación permite identificar una brecha alimentaria y una brecha hídrica. La primera expresa la diferencia entre el consumo requerido y la oferta disponible; la segunda compara el agua necesaria para alcanzar la producción esperada con el agua efectivamente disponible.
 

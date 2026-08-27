@@ -91,26 +91,130 @@ Esta hipótesis deberá ponerse a prueba mediante datos y escenarios de simulaci
 
 ## 2. Metodología
 
+La investigación se desarrollará mediante un enfoque de dinámica de sistemas, con el propósito de representar las relaciones temporales existentes entre el consumo alimentario, la demanda, el comportamiento fenológico de los cultivos, las condiciones climáticas, la disponibilidad hídrica, la producción y la oferta. La construcción del modelo seguirá un proceso iterativo que comprende la articulación del problema, la formulación de una hipótesis dinámica, la formulación del modelo de simulación, las pruebas de validación y la evaluación de políticas (Referencia sobre metodología de dinámica de sistemas).
+
 ### 2.1. Articulación del problema y selección de límites
 
 En desarrollo.
 
 ### 2.2. Formulación de la hipótesis dinámica
 
-Pendiente.
+La hipótesis dinámica buscará explicar cómo las relaciones entre el consumo, la producción requerida, el recurso hídrico, el comportamiento fenológico y la producción real pueden generar las condiciones de suficiencia o insuficiencia alimentaria observadas en el territorio.
+
+#### 2.2.1. Identificación de variables y subsistemas
+
+El modelo estará conformado inicialmente por los subsistemas de consumo, demanda, clima, recurso hídrico, fenología, producción y oferta. Para cada subsistema se identificarán las variables de entrada y salida, sus unidades de medición, sus fuentes de información y su dependencia temporal.
+
+Las variables se clasificarán como niveles, flujos, variables auxiliares o parámetros, de acuerdo con la función que desempeñen en el modelo (Referencia sobre niveles y flujos en dinámica de sistemas).
+
+#### 2.2.2. Establecimiento de relaciones entre subsistemas
+
+Se estudiarán las posibles relaciones entre las variables mediante análisis gráfico, correlaciones estadísticas, antecedentes bibliográficos y conocimiento del sistema agrícola (Referencia sobre análisis de relaciones entre variables agrícolas).
+
+Se diferenciará entre correlación, causalidad y sensibilidad. Una correlación permitirá identificar variables que presentan un comportamiento asociado en los datos, pero no demostrará por sí sola una relación causal. En consecuencia, las conexiones incorporadas al modelo deberán estar respaldadas por datos, fundamentos físicos, agronómicos o socioeconómicos y referencias bibliográficas.
+
+Una de las relaciones estudiadas será la existente entre el comportamiento fenológico de los cultivos y el consumo alimentario de la comunidad. Esta relación no necesariamente será directa. El consumo permitirá calcular la demanda y la producción requerida, mientras que la fenología permitirá estimar el momento de cosecha y la producción que podría obtenerse.
+
+Estas rutas pueden representarse inicialmente como:
+
+$
+C(t)\rightarrow D(t)\rightarrow P_r(t)
+$
+
+y:
+
+$
+F(t)\rightarrow Y(t)\rightarrow P_a(t)
+$
+
+donde \(C(t)\) representa el consumo observado; \(D(t)\), la demanda estimada; \(P_r(t)\), la producción requerida; \(F(t)\), el estado fenológico; \(Y(t)\), el rendimiento, y \(P_a(t)\), la producción agrícola real.
+
+La comparación de las dos rutas permitirá analizar si un cultivo cumple las condiciones necesarias para sembrarse en una época determinada y si su cosecha puede coincidir con el periodo en el que se requiere el producto.
 
 ### 2.3. Formulación del modelo de simulación
 
-Pendiente.
+Durante esta etapa, las relaciones planteadas en la hipótesis dinámica se transformarán en ecuaciones, parámetros y reglas de decisión que puedan implementarse en el modelo computacional.
+
+#### 2.3.1. Formulación de ecuaciones diferenciales
+
+Las variables que presenten cambios continuos o acumulaciones a través del tiempo serán representadas mediante ecuaciones diferenciales. La forma de cada ecuación dependerá de la naturaleza de la variable, los datos disponibles y los modelos reportados en la bibliografía.
+
+Por ejemplo, el cambio del estado fenológico podrá expresarse inicialmente como:
+
+$
+\frac{dF}{dt}=f(T,H,A,R,\ldots)
+$
+
+donde \(T\) representa la temperatura; \(H\), la humedad; \(A\), la disponibilidad de agua, y \(R\), la radiación solar (Referencia sobre modelos fenológicos de cultivos).
+
+#### 2.3.2. Integración mediante la regla de la cadena
+
+Cuando una variable dependa de otra y esta, a su vez, dependa del tiempo o de una tercera variable, se evaluará la aplicación de la regla de la cadena. Esta herramienta permitirá relacionar tasas de cambio pertenecientes a diferentes subsistemas, aunque las variables no se encuentren dentro del mismo bucle de realimentación (Referencia sobre regla de la cadena en modelos dinámicos).
+
+Por ejemplo, si la producción agrícola depende del rendimiento y el rendimiento depende del estado fenológico:
+
+$
+\frac{dP_a}{dt}
+=
+\frac{dP_a}{dY}
+\frac{dY}{dF}
+\frac{dF}{dt}
+$
+
+De forma semejante, la variación de la producción requerida puede relacionarse con el cambio del consumo:
+
+$
+\frac{dP_r}{dt}
+=
+\frac{dP_r}{dC}
+\frac{dC}{dt}
+$
+
+La regla de la cadena será aplicada únicamente cuando exista una dependencia matemática y causal que pueda justificarse. Su aplicación no comprobará por sí misma la validez del modelo, por lo que sus resultados deberán contrastarse con información observada.
+
+#### 2.3.3. Estimación de parámetros
+
+Los parámetros podrán relacionarse con las tasas de crecimiento, la duración de las etapas fenológicas, el rendimiento, la eficiencia del riego, las pérdidas del sistema o la relación entre el consumo y la producción requerida.
+
+Dependiendo de la información disponible, estos valores se obtendrán de datos recolectados, bases de datos institucionales, literatura científica, procesos de calibración o supuestos explícitos. Para cada parámetro se registrará su unidad, fuente, valor inicial, rango posible y nivel de incertidumbre.
+
+#### 2.3.4. Implementación computacional
+
+El modelo será implementado en Python mediante una estructura modular. Cada subsistema contará con componentes independientes para organizar sus variables y ecuaciones. Además, se incorporará un módulo de integración matemática para registrar las relaciones entre los subsistemas, formular las ecuaciones diferenciales, aplicar la regla de la cadena, estimar parámetros y comparar los resultados simulados con los datos reales.
 
 ### 2.4. Pruebas y validación
 
-Pendiente.
+El modelo será sometido a pruebas estructurales, pruebas de condiciones extremas, comparación con datos reales y análisis de sensibilidad (Referencia sobre validación de modelos de dinámica de sistemas).
+
+#### 2.4.1. Comparación con datos reales
+
+Los resultados se compararán con datos observados de consumo, crecimiento, rendimiento, producción y oferta. Como indicador inicial de cobertura se podrá utilizar:
+
+$
+I_c(t)=\frac{P_a(t)}{P_r(t)}
+$
+
+Si \(I_c(t)\geq1\), la producción sería suficiente para cubrir la demanda estimada. Si \(I_c(t)<1\), existiría una brecha entre la producción obtenida y la requerida.
+
+El error entre los resultados observados y simulados podrá expresarse como:
+
+$
+E(t)=Y_{\text{observado}}(t)-Y_{\text{simulado}}(t)
+$
+
+Posteriormente se seleccionarán medidas estadísticas de ajuste según la cantidad y las características de los datos disponibles (Referencia sobre calibración y validación de modelos).
+
+Si el modelo no representa adecuadamente el comportamiento observado, deberán revisarse sus relaciones, parámetros, ecuaciones o hipótesis dinámica.
+
+#### 2.4.2. Análisis de sensibilidad
+
+El análisis de sensibilidad permitirá determinar cuáles parámetros producen los mayores cambios en los resultados del sistema. Para ello, se modificarán individualmente o en conjunto los valores de entrada y se observarán sus efectos sobre la producción, la disponibilidad hídrica y la cobertura de la demanda.
+
+Este análisis no será interpretado como una correlación estadística, sino como una evaluación de la respuesta del modelo ante cambios en sus parámetros.
 
 ### 2.5. Diseño y evaluación de políticas
 
 Pendiente.
-
 ## 3. Resultados
 
 Pendiente.

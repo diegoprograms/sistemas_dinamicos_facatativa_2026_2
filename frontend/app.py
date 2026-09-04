@@ -3,7 +3,7 @@ from datetime import date, time
 import pandas as pd
 import streamlit as st
 
-from frontend.api_client import health_check
+from api_client import health_check
 
 
 st.set_page_config(page_title="Consumo alimentario estimado", page_icon="🌱", layout="wide")

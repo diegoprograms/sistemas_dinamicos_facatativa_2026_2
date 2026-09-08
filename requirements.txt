@@ -3,8 +3,8 @@ uvicorn
 streamlit
 requests
 pandas
+openpyxl
 numpy
 scipy
 matplotlib
 pytest
-

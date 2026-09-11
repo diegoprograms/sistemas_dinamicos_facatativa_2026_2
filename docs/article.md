@@ -95,7 +95,50 @@ La investigación se desarrollará mediante un enfoque de dinámica de sistemas,
 
 ### 2.1. Articulación del problema y selección de límites
 
-En desarrollo.
+La primera etapa del proyecto incluye la delimitación progresiva del sistema y el diseño de un mecanismo de recolección que permita obtener datos comparables entre establecimientos y jornadas. Como avance inicial, se definió una estrategia de observación en establecimientos alimentarios basada en el conteo de personas que ingresan durante intervalos determinados y en el registro de los residuos generados durante el periodo de observación.
+
+Estos registros no equivalen directamente al consumo de productos agrícolas. El número de personas constituye una medida de la afluencia al establecimiento, mientras que la masa de residuos permite aproximarse al desperdicio generado. Por esta razón, la identificación de alimentos, ingredientes y cantidades consumidas requerirá fuentes complementarias o supuestos explícitos. Esta distinción se conservará durante la formulación del subsistema de consumo para evitar interpretar la afluencia o los residuos como mediciones directas de demanda alimentaria.
+
+#### 2.1.1. Estructura de los datos de campo
+
+La plantilla diseñada para los grupos de estudiantes organiza la información en tres conjuntos principales:
+
+1. **Establecimientos:** código del establecimiento, grupo responsable, zona, tipo de establecimiento, referencia de ubicación, disponibilidad para colaborar con la medición de residuos y observaciones.
+2. **Conteo de personas:** identificador de la jornada, fecha, establecimiento, grupo, zona, hora inicial, hora final, número de personas que ingresan, duración del intervalo y observaciones.
+3. **Residuos:** identificador de la jornada, fecha, establecimiento, grupo, zona, tipo de residuo, masa, unidad, método de medición, periodo correspondiente y observaciones.
+
+El identificador de jornada relaciona los intervalos de conteo y las mediciones de residuos efectuadas en un mismo establecimiento y fecha. Esta organización permite que una jornada contenga varios intervalos de observación y varias mediciones sin duplicar la información general del establecimiento.
+
+Se establecieron como criterios preliminares de calidad el uso de códigos para los establecimientos, la ausencia de datos personales de consumidores, el registro explícito de las unidades de masa, la documentación de valores faltantes y la separación entre mediciones pesadas y valores estimados.
+
+#### 2.1.2. Prototipo de captura y revisión
+
+Se desarrolló una aplicación web en Streamlit para trasladar gradualmente la recolección desde archivos individuales hacia un formulario común. La página principal del prototipo permite que cada grupo registre su identificación, el código y la zona del establecimiento y la fecha de observación. A partir de estos campos, la aplicación genera un identificador de jornada y habilita formularios independientes para agregar intervalos de conteo y mediciones de residuos.
+
+Durante el registro se valida que los campos mínimos de identificación estén completos y que la hora final de un intervalo sea posterior a su hora inicial. Una vista de revisión muestra los registros asociados con la jornada y calcula el número de intervalos, el total de personas contabilizadas y el número de mediciones de residuos. Esta revisión busca detectar errores antes del envío definitivo de la información.
+
+La aplicación también incorpora un lector de archivos de Excel para facilitar la transición desde el procedimiento inicial. El usuario puede cargar una o varias plantillas, seleccionar un archivo y elegir la hoja que desea visualizar. De esta manera, los datos ya recolectados pueden inspeccionarse sin modificar los documentos originales.
+
+El frontend fue organizado en módulos independientes para separar la configuración de los datos, el manejo del estado, el registro de campo, la lectura de archivos, los análisis preliminares y la conexión con el backend. Esta organización facilita corregir o ampliar una sección sin intervenir en todo el código de la interfaz.
+
+#### 2.1.3. Estado de implementación y persistencia
+
+A 10 de septiembre de 2026, el prototipo permite capturar y revisar información dentro de una sesión y visualizar las hojas de los archivos enviados por los estudiantes. Sin embargo, los registros ingresados mediante los formularios y los archivos cargados todavía permanecen únicamente en la memoria temporal de la sesión. Al cerrar la página o reiniciarse la aplicación, esta información puede perderse y no queda disponible para consolidación entre grupos.
+
+Por esta razón, la aplicación aún no se utilizará como mecanismo definitivo de entrega. El siguiente desarrollo metodológico y técnico consiste en seleccionar un sistema de almacenamiento persistente, definir las reglas para evitar jornadas duplicadas y establecer un procedimiento de consulta y exportación de la información consolidada.
+
+| Componente | Estado actual |
+|---|---|
+| Plantilla estandarizada para establecimientos, conteos y residuos | Implementada |
+| Formulario web para identificación de jornadas | Implementado en prototipo |
+| Registro de múltiples intervalos y mediciones por jornada | Implementado en prototipo |
+| Revisión de los registros de la jornada | Implementada en prototipo |
+| Lectura y visualización de varias hojas de Excel | Implementada |
+| Organización modular del frontend | Implementada |
+| Almacenamiento permanente y consolidación entre grupos | Pendiente |
+| Control de usuarios, duplicados y correcciones posteriores | Pendiente |
+| Exportación del conjunto consolidado | Pendiente |
+| Integración de estos datos con el modelo dinámico | Pendiente |
 
 ### 2.2. Formulación de la hipótesis dinámica
 
@@ -230,4 +273,3 @@ Pendiente.
 ## Referencias
 
 Pendientes de búsqueda y consolidación.
-

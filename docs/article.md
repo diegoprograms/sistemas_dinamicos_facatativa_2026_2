@@ -160,15 +160,15 @@ Una de las relaciones estudiadas será la existente entre el comportamiento feno
 
 Estas rutas pueden representarse inicialmente como:
 
-$
+$$
 C(t)\rightarrow D(t)\rightarrow P_r(t)
-$
+$$
 
 y:
 
-$
+$$
 F(t)\rightarrow Y(t)\rightarrow P_a(t)
-$
+$$
 
 donde \(C(t)\) representa el consumo observado; \(D(t)\), la demanda estimada; \(P_r(t)\), la producción requerida; \(F(t)\), el estado fenológico; \(Y(t)\), el rendimiento, y \(P_a(t)\), la producción agrícola real.
 
@@ -184,9 +184,9 @@ Las variables que presenten cambios continuos o acumulaciones a través del tiem
 
 Por ejemplo, el cambio del estado fenológico podrá expresarse inicialmente como:
 
-$
+$$
 \frac{dF}{dt}=f(T,H,A,R,\ldots)
-$
+$$
 
 donde \(T\) representa la temperatura; \(H\), la humedad; \(A\), la disponibilidad de agua, y \(R\), la radiación solar (Referencia sobre modelos fenológicos de cultivos).
 
@@ -196,22 +196,22 @@ Cuando una variable dependa de otra y esta, a su vez, dependa del tiempo o de un
 
 Por ejemplo, si la producción agrícola depende del rendimiento y el rendimiento depende del estado fenológico:
 
-$
+$$
 \frac{dP_a}{dt}
 =
 \frac{dP_a}{dY}
 \frac{dY}{dF}
 \frac{dF}{dt}
-$
+$$
 
 De forma semejante, la variación de la producción requerida puede relacionarse con el cambio del consumo:
 
-$
+$$
 \frac{dP_r}{dt}
 =
 \frac{dP_r}{dC}
 \frac{dC}{dt}
-$
+$$
 
 La regla de la cadena será aplicada únicamente cuando exista una dependencia matemática y causal que pueda justificarse. Su aplicación no comprobará por sí misma la validez del modelo, por lo que sus resultados deberán contrastarse con información observada.
 
@@ -233,17 +233,17 @@ El modelo será sometido a pruebas estructurales, pruebas de condiciones extrema
 
 Los resultados se compararán con datos observados de consumo, crecimiento, rendimiento, producción y oferta. Como indicador inicial de cobertura se podrá utilizar:
 
-$
+$$
 I_c(t)=\frac{P_a(t)}{P_r(t)}
-$
+$$
 
 Si \(I_c(t)\geq1\), la producción sería suficiente para cubrir la demanda estimada. Si \(I_c(t)<1\), existiría una brecha entre la producción obtenida y la requerida.
 
 El error entre los resultados observados y simulados podrá expresarse como:
 
-$
+$$
 E(t)=Y_{\text{observado}}(t)-Y_{\text{simulado}}(t)
-$
+$$
 
 Posteriormente se seleccionarán medidas estadísticas de ajuste según la cantidad y las características de los datos disponibles (Referencia sobre calibración y validación de modelos).
 

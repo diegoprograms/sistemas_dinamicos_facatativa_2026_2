@@ -197,20 +197,13 @@ Cuando una variable dependa de otra y esta, a su vez, dependa del tiempo o de un
 Por ejemplo, si la producción agrícola depende del rendimiento y el rendimiento depende del estado fenológico:
 
 $$
-\frac{dP_a}{dt}
-=
-\frac{dP_a}{dY}
-\frac{dY}{dF}
-\frac{dF}{dt}
+\frac{dP_a}{dt} = \frac{dP_a}{dY}\frac{dY}{dF}\frac{dF}{dt}
 $$
 
 De forma semejante, la variación de la producción requerida puede relacionarse con el cambio del consumo:
 
 $$
-\frac{dP_r}{dt}
-=
-\frac{dP_r}{dC}
-\frac{dC}{dt}
+\frac{dP_r}{dt}=\frac{dP_r}{dC}\frac{dC}{dt}
 $$
 
 La regla de la cadena será aplicada únicamente cuando exista una dependencia matemática y causal que pueda justificarse. Su aplicación no comprobará por sí misma la validez del modelo, por lo que sus resultados deberán contrastarse con información observada.
@@ -237,7 +230,7 @@ $$
 I_c(t)=\frac{P_a(t)}{P_r(t)}
 $$
 
-Si \(I_c(t)\geq1\), la producción sería suficiente para cubrir la demanda estimada. Si \(I_c(t)<1\), existiría una brecha entre la producción obtenida y la requerida.
+Si $$\(I_c(t)\geq1\)$$, la producción sería suficiente para cubrir la demanda estimada. Si \(I_c(t)<1\), existiría una brecha entre la producción obtenida y la requerida.
 
 El error entre los resultados observados y simulados podrá expresarse como:
 

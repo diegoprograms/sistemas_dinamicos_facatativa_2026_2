@@ -48,6 +48,12 @@ El proyecto se encuentra en la etapa 1: articulación del problema y selección
 de límites. Las ecuaciones incluidas son preliminares y sirven como base
 técnica para el desarrollo posterior.
 
+Actualización del 1 de octubre de 2026: el equipo dispone únicamente de
+información de fenología. El trabajo de datos comenzará por revisar y organizar
+esa información. Las demás variables quedan planteadas para etapas posteriores
+en [docs/variables.md](docs/variables.md); no se asume que haya datos de
+restaurantes disponibles. Los formularios existentes siguen siendo prototipos.
+
 ## Próximas decisiones
 
 - [ ] Confirmar el territorio y las conexiones translocales.
@@ -56,4 +62,3 @@ técnica para el desarrollo posterior.
 - [ ] Identificar fuentes de datos climáticos e hídricos.
 - [ ] Construir modos de referencia.
 - [ ] Formular los primeros bucles causales.
-

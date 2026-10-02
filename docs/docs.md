@@ -4,6 +4,9 @@ Actualizado el 1 de octubre de 2026.
 
 ## Contenido y estado
 
+- [conexiones.md](conexiones.md): flujo entre frontend, backend, almacenamiento
+  y pruebas, con archivos responsables, endpoints y conexiones pendientes.
+
 - [variables.md](variables.md): inventario de once bloques de datos posibles y
   detalle de fenología, único conjunto disponible reportado por el equipo.
 - [article.md](article.md): borrador del problema y metodología; contiene el

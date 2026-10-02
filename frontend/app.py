@@ -1,5 +1,6 @@
 import streamlit as st
 
+from views.restaurant_storage import show_restaurant_storage
 from state import initialize_state
 from views.analysis import show_estimation, show_summary
 from views.collection import show_collection, show_quick_observation
@@ -20,6 +21,7 @@ def show_header() -> None:
 
 
 PAGES = {
+    "Abastecimiento guardado": show_restaurant_storage,
     "Registrar datos": show_student_registration,
     "Archivos de estudiantes": show_student_files,
     "Resumen": show_summary,

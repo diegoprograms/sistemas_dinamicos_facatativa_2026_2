@@ -9,7 +9,7 @@ de estudiantes, lectura de Excel, resumen, tablas de recolección, observaciones
 estimación de consumo y comprobación de conexión.
 
 `data_config.py` define tablas y escenarios iniciales; `state.py` los mantiene
-en `st.session_state`. Los formularios no guardan registros permanentemente.
+en `st.session_state`. Los formularios anteriores no guardan registros permanentemente.
 El lector permite consultar archivos `.xlsx` y sus hojas durante la sesión;
 no los importa a una base de datos. Las estimaciones usan entradas y supuestos
 de la interfaz, no constituyen resultados validados de investigación.
@@ -18,7 +18,7 @@ de la interfaz, no constituyen resultados validados de investigación.
 
 `views/connection.py` utiliza `api_client.py` para consultar
 `http://127.0.0.1:8000/health` en [backend](../backend/backend.md).
-No llama al endpoint de simulación ni guarda datos en [data](../data/data.md).
+No llama al endpoint de simulación. El módulo nuevo guarda abastecimiento mediante el backend.
 El inventario de [variables](../docs/variables.md) no genera automáticamente
 formularios. No existe todavía una vista específica de fenología.
 
@@ -30,3 +30,13 @@ y la captura en línea son objetivos futuros. Conservar la distinción entre
 datos observados y estimaciones.
 
 Desde la raíz: `streamlit run frontend/app.py`.
+
+## Actualización: almacenamiento de abastecimiento
+
+`views/restaurant_storage.py` incorpora la página **Abastecimiento guardado**:
+formulario mínimo, plantilla CSV, importación validada de CSV/XLSX, consulta y
+exportación. Utiliza `BACKEND_URL` y necesita el backend en ejecución. Los
+archivos originales y los registros se guardan en el servidor del backend.
+Esta vista no reutiliza los datos ficticios de `data_config.py`. El formulario
+de estudiantes y su lector Excel siguen temporales. Acceso por restaurante y
+campos opcionales de inventario, descartes y almuerzos quedan pendientes.

@@ -12,13 +12,21 @@ negativa y rechazo de entradas físicamente inválidas.
 
 Importa directamente funciones de [backend/model](../backend/backend.md).
 Usa valores definidos en las pruebas; no lee archivos de [data](../data/data.md).
-No cubre rutas HTTP, formularios de [frontend](../frontend/frontend.md), persistencia
-ni fenología. Estas pruebas de cálculo no sustituyen la validación científica
+Las pruebas del modelo no cubren rutas HTTP, formularios de
+[frontend](../frontend/frontend.md) ni fenología. La persistencia tiene pruebas
+propias descritas abajo. Estas pruebas de cálculo no sustituyen la validación científica
 con observaciones reales.
 
 ## Ejecución y pendientes
 
 Desde la raíz, con dependencias instaladas: `python -m pytest tests`.
 Este documento describe la cobertura existente, no certifica una ejecución reciente.
-Añadir pruebas de importación, integridad de registros y cálculos fenológicos
-cuando se implementen esos componentes y se acuerden sus requisitos.
+Ampliar cobertura de interfaz, API y cálculos fenológicos al desarrollar esos componentes.
+
+## Actualización: almacenamiento de abastecimiento
+
+`test_restaurant_storage.py` verifica persistencia entre conexiones, rechazo
+de lotes inválidos sin inserción parcial, validación de fechas/unidades/cantidades,
+duplicados entre formulario y CSV y conservación del archivo original. Usa
+un directorio temporal, sin tocar datos reales. Con pandas y openpyxl instalados puede ejecutarse sin pytest:
+`python3 -m unittest discover -s tests -p test_restaurant_storage.py -v`.

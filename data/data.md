@@ -121,7 +121,15 @@ Los archivos se organizarán en [raw](raw/raw.md) para originales,
 [processed](processed/processed.md) para datos depurados y
 [examples](examples/examples.md) para ejemplos ficticios.
 
-Actualmente [frontend](../frontend/frontend.md) conserva formularios y Excel
-solo durante la sesión. No hay guardado implementado en esta carpeta ni una
-conexión de persistencia con [backend](../backend/backend.md). El análisis desde
-[notebooks](../notebooks/notebooks.md) también está previsto, no implementado.
+El módulo **Abastecimiento guardado** de [frontend](../frontend/frontend.md)
+se conecta con [backend](../backend/backend.md) para guardar registros en
+`data/private/restaurantes.sqlite` y archivos aceptados en `data/private/originales/`.
+La ruta puede cambiarse con `RESTAURANT_STORAGE_DIR`. Esta carpeta queda fuera
+de Git y requiere respaldo independiente. El lector anterior de archivos de
+estudiantes y los formularios de conteos/residuos siguen siendo temporales.
+
+La importación usa una plantilla nueva de abastecimiento: no convierte
+automáticamente los Excel anteriores de conteos o residuos. Valida toda la
+entrega antes de insertar, conserva originales y omite registros exactamente
+iguales tras normalizar texto. Valores diferentes en un mismo periodo no se
+consideran automáticamente correcciones; su revisión sigue pendiente.

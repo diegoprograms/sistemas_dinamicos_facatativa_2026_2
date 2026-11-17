@@ -4,6 +4,9 @@ Actualizado el 1 de octubre de 2026.
 
 ## Contenido y estado
 
+- [notas.md](notas.md): bitácora por fecha para ideas, preguntas, observaciones
+  y posibles tareas; separada de las decisiones aprobadas.
+
 - [conexiones.md](conexiones.md): flujo entre frontend, backend, almacenamiento
   y pruebas, con archivos responsables, endpoints y conexiones pendientes.
 

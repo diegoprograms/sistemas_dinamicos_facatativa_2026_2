@@ -6,6 +6,9 @@ Facatativá, Cundinamarca.
 
 ## Resumen por carpeta
 
+Las ideas, preguntas y observaciones se registran en la
+[bitácora de notas](docs/notas.md).
+
 Consulte [Conexiones entre carpetas](docs/conexiones.md) para ver los archivos
 que enlazan la interfaz, la API, el almacenamiento y las pruebas.
 
